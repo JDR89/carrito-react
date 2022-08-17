@@ -12,7 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 
-
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   
@@ -27,7 +26,6 @@ const ResponsiveAppBar = () => {
   };
 
  
-
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -118,7 +116,6 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          
         </Toolbar>
       </Container>
     </AppBar>
