@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -5,27 +6,31 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 const pages = ['Products', 'Pricing', 'Blog'];
 
+
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  
+ 
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
- 
+
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -58,7 +63,7 @@ const ResponsiveAppBar = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-           
+              <MenuIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -116,9 +121,11 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
+          <Button size="medium" variant="contained"  className="cart-button"><ShoppingCartIcon className='cart'/></Button>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
 export default ResponsiveAppBar;
+
