@@ -7,13 +7,10 @@ function App() {
   return (
     <div className="App">
 
-      <div>
         <NavBar />
-      </div>
-
-      <div>
+        
         <CardList  title={"Lo mas vendido"}/>
-      </div>
+      
 
     </div>
   );
