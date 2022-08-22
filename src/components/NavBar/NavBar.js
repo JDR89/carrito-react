@@ -1,4 +1,5 @@
 
+
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,7 +11,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from '../CartWidget/CartWidget';
+
+
 
 
 const pages = ['Products', 'Pricing', 'Blog'];
@@ -121,7 +124,7 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          <Button size="medium" variant="contained"  className="cart-button"><ShoppingCartIcon className='cart'/></Button>
+      <CartWidget/>
         </Toolbar>
       </Container>
     </AppBar>
