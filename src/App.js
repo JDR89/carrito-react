@@ -8,10 +8,9 @@ function App() {
     <div className="App">
 
         <NavBar />
-        
-        <CardList  title={"Lo mas vendido"}/>
-      
 
+        <CardList/>
+      
     </div>
   );
 }
