@@ -16,8 +16,9 @@ import { ItemCount } from "../ItemCount/ItemCount";
                 <div>
                  <img alt="imagen" src={`./imagenes/${image}`}/>
                  </div>
-                 <p>{title}</p>
-                 <span>{price}</span>
+                 
+                 <p>{title} - <span>{price}</span></p>
+                 
                  <p>En stock: {stock}</p>
             </CardContent>
            <ItemCount inicial={1} stock={stock} title={title} agregarProducto={agregar} />

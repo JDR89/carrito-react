@@ -38,6 +38,38 @@ const CardList = () => {
       image: "campera.webp",
       stock: 5,
     },
+
+    {
+      id: 5,
+      title: "Zapatillas mujer",
+      price: "$15.000",
+      image: "zapas.webp",
+      stock: 3,
+    },
+
+    {
+      id: 6,
+      title: "Zapatillas hombre",
+      price: "$14.000",
+      image: "zapas2.webp",
+      stock: 10,
+    },
+
+    {
+      id: 7,
+      title: "Gorra",
+      price: "$5.000",
+      image: "gorra.webp",
+      stock: 5,
+    },
+
+    {
+      id: 8,
+      title: "Camiseta hockey",
+      price: "$10.000",
+      image: "hockey.webp",
+      stock: 4,
+    },
   ];
 
   useEffect(() => {
