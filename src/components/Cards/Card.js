@@ -6,6 +6,10 @@ import { ItemCount } from "../ItemCount/ItemCount";
 
  const BasicCard = ({title,price,image,stock}) => {
     
+    const agregar=()=>{
+        console.log(`${title} se agrego al carrito`)
+    }
+
     return (
         <Card className="card-item" sx={{ minWidth: 175 }}>
             <CardContent>
@@ -16,9 +20,8 @@ import { ItemCount } from "../ItemCount/ItemCount";
                  <span>{price}</span>
                  <p>En stock: {stock}</p>
             </CardContent>
-           <ItemCount inicial={1} stock={stock} title={title} />
+           <ItemCount inicial={1} stock={stock} title={title} agregarProducto={agregar} />
            
-        
         </Card>
     );
 }

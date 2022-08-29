@@ -4,11 +4,9 @@ import Button from '@mui/material/Button';
 import {useState} from "react"
 
 
-export const ItemCount = ({stock,title,inicial}) =>{
+export const ItemCount = ({stock,inicial,agregarProducto}) =>{
 
-    const agregarProducto=()=>{
-        console.log(`se agrego ${count} ${title} al carrito`)
-    }
+    
 
     const [count,setCount] = useState(inicial)
 
