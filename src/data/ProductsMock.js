@@ -65,4 +65,13 @@
     },
   ];
 
+  //  const producto={
+  //     id:1,
+  //     title: "Remera seleccion XL",
+  //     price: "$15.000",
+  //     image: "camiseta.webp",
+  //     stock: 9,
+  // }
+
   export default productos
+  // export {producto}

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import productos from "../../data/ProductsMock";
 
 
+
 const CardList = () => {
   const [products, setProducts] = useState([]);
 
@@ -27,8 +28,10 @@ const CardList = () => {
       });
   }, []);
 
+
   return (
     <>
+    
       <Box className="caja" sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           {

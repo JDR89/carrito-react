@@ -1,7 +1,8 @@
 
 import './App.css';
 import NavBar from "./components/NavBar/NavBar"
-import CardList from "./components/Cards/CardList"
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CardListContainer from './components/Cards/CardListContainer';
 
 function App() {
   return (
@@ -9,8 +10,9 @@ function App() {
 
         <NavBar />
 
-        <CardList/>
-      
+        <CardListContainer/>
+
+        <ItemDetailContainer/>
     </div>
   );
 }
