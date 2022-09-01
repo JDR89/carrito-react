@@ -29,7 +29,10 @@ export const ItemCount = ({stock,inicial,agregarProducto}) =>{
             <p>{count}</p>
             <Button onClick={addCount}  size="small">+</Button>
         </div>
+
+            
             <Button onClick={agregarProducto}>Agregar al carrito</Button>
+            
         </>
     )
 }

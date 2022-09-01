@@ -16,7 +16,7 @@ import CartWidget from '../CartWidget/CartWidget';
 
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Inicio', 'Contacto', 'Redes'];
 
 
 const ResponsiveAppBar = () => {
@@ -125,6 +125,7 @@ const ResponsiveAppBar = () => {
           </Box>
 
       <CartWidget/>
+      
         </Toolbar>
       </Container>
     </AppBar>
