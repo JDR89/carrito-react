@@ -18,7 +18,7 @@ import { Button } from "@mui/material";
                  <img alt="imagen" src={`../imagenes/${image}`}/>
                  
                 <Button>
-                    <Link to={`/producto/${id}`}>Detalle del producto</Link>
+                    <Link className="linkDetalle" to={`/producto/${id}`}>Detalle del producto</Link>
                 </Button>
                  </div>
                  

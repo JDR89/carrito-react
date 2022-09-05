@@ -12,7 +12,8 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import CartWidget from '../CartWidget/CartWidget';
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 
 
 
@@ -47,7 +48,8 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           
-          <Link className="linkMalva" to={"/"}>
+          <NavLink className="linkMalva" to={"/"}>
+          
           <Typography
             variant="h6"
             noWrap
@@ -65,7 +67,7 @@ const ResponsiveAppBar = () => {
           >
             MALVA
           </Typography>
-          </Link>
+          </NavLink>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
