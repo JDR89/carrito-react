@@ -17,6 +17,7 @@ import { NavLink,Link } from 'react-router-dom';
 
 
 
+
 const pages = [
   
   <NavLink  className={({isActive})=>isActive ? "claseActive" :"claseInactive"} to="/productos/camisetas">Camisetas</NavLink>,
