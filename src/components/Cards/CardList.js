@@ -12,6 +12,7 @@ const CardList = ({items}) => {
         <Grid container spacing={2}>
           {
           items.map((e) => {
+            
             return (
               <Grid item xs={12} sm={6} md={3} key={e.id}>
                 <BasicCard
@@ -19,6 +20,7 @@ const CardList = ({items}) => {
                   price={e.price}
                   image={e.image}
                   stock={e.stock}
+                  id={e.id}
                 />
               </Grid>
             );

@@ -25,7 +25,7 @@ export const ItemCount = ({stock,inicial,agregarProducto}) =>{
     return (
         <>
         <div className="count-item">
-            <Button onClick={removeCount}  size="small">-</Button>
+            <Button onClick={removeCount} size="small">-</Button>
             <p>{count}</p>
             <Button onClick={addCount}  size="small">+</Button>
         </div>

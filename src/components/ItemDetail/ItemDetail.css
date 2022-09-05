@@ -1,0 +1,23 @@
+.contenedor-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.item-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.item-detail img{
+
+    max-width: 80%;
+    margin: 2rem;
+    border: 1px solid black;
+}
+
+

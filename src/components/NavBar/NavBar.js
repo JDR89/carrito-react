@@ -1,5 +1,5 @@
 
-
+import "./NavBar.css"
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,11 +12,18 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink,Link } from 'react-router-dom';
 
 
 
 
-const pages = ['Inicio', 'Contacto', 'Redes'];
+const pages = [
+  
+  <NavLink  className={({isActive})=>isActive ? "claseActive" :"claseInactive"} to="/productos/camisetas">Camisetas</NavLink>,
+  <NavLink  className={({isActive})=>isActive ? "claseActive" :"claseInactive"} to="/productos/camperas">Camperas</NavLink>,
+  <NavLink  className={({isActive})=>isActive ? "claseActive" :"claseInactive"} to="/productos/zapatillasyaccesorios">Zapatillas y accesorios</NavLink>,
+  
+];
 
 
 const ResponsiveAppBar = () => {
@@ -39,11 +46,12 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           
+          <Link className="linkMalva" to={"/"}>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -56,6 +64,7 @@ const ResponsiveAppBar = () => {
           >
             MALVA
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton

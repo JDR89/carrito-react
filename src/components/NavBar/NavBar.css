@@ -1,2 +1,12 @@
+.claseActive{
+    color:black
+}
 
+.claseInactive{
+    color: white;
+}
 
+.linkMalva{
+    text-decoration: none;
+    color: white;
+}

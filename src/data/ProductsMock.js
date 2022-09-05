@@ -6,14 +6,16 @@
       price: "$15.000",
       image: "camiseta.webp",
       stock: 9,
+      categoria:"camisetas"
     },
 
     {
-      id: 2,
+      id:2,
       title: "Remera seleccion L",
       price: "$13.000",
       image: "camiseta.webp",
       stock: 6,
+      categoria:"camisetas"
     },
 
     {
@@ -22,6 +24,7 @@
       price: "$12.000",
       image: "campera.webp",
       stock: 7,
+      categoria:"camperas"
     },
 
     {
@@ -30,6 +33,7 @@
       price: "$10.000",
       image: "campera.webp",
       stock: 5,
+      categoria:"camperas"
     },
 
     {
@@ -38,6 +42,7 @@
       price: "$15.000",
       image: "zapas.webp",
       stock: 3,
+      categoria:"zapatillasyaccesorios"
     },
 
     {
@@ -46,6 +51,7 @@
       price: "$14.000",
       image: "zapas2.webp",
       stock: 10,
+      categoria:"zapatillasyaccesorios"
     },
 
     {
@@ -54,6 +60,7 @@
       price: "$5.000",
       image: "gorra.webp",
       stock: 5,
+      categoria:"zapatillasyaccesorios"
     },
 
     {
@@ -62,6 +69,7 @@
       price: "$10.000",
       image: "hockey.webp",
       stock: 4,
+      categoria:"camisetas"
     },
   ];
 

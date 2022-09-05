@@ -2,9 +2,10 @@ import "./Card.css"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { ItemCount } from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 
- const BasicCard = ({title,price,image,stock}) => {
+ const BasicCard = ({title,price,image,stock,id}) => {
     
     const agregar=()=>{
         console.log(`${title} se agrego al carrito`)
@@ -14,8 +15,11 @@ import { Button } from "@mui/material";
         <Card className="card-item" sx={{ minWidth: 175 }}>
             <CardContent>
                 <div>
-                 <img alt="imagen" src={`./imagenes/${image}`}/>
-                 <Button>Detalle del producto</Button>
+                 <img alt="imagen" src={`../imagenes/${image}`}/>
+                 
+                <Button>
+                    <Link to={`/producto/${id}`}>Detalle del producto</Link>
+                </Button>
                  </div>
                  
                  <p>{title} - <span>{price}</span></p>
