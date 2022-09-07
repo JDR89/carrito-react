@@ -39,7 +39,7 @@ const CardListContainer = () => {
     <>
       {load ? (
         <Box
-          sx={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}
+          sx={{ display: "flex", justifyContent: "center", marginTop: "15rem" }}
         >
           <CircularProgress />
         </Box>

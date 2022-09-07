@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from "./components/NavBar/NavBar"
 import CardListContainer from './components/Cards/CardListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CartContainer from './components/CartContainer/CartContainer'
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/productos' element={<CardListContainer/>}/>
           <Route path='/productos/:tipoProducto' element={<CardListContainer/>}/>
           <Route path='/producto/:idProducto' element={<ItemDetailContainer/>} />
+          <Route path='/cart' element={<CartContainer/>} />
           <Route path="*" element={<CardListContainer/>} />
         </Routes>
         

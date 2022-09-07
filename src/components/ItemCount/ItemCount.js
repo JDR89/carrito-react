@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import {useState} from "react"
 
 
-export const ItemCount = ({stock,inicial,agregarProducto}) =>{
+export const ItemCount = ({stock,inicial,onAdd}) =>{
 
     
 
@@ -24,15 +24,14 @@ export const ItemCount = ({stock,inicial,agregarProducto}) =>{
 
     return (
         <>
+
         <div className="count-item">
             <Button onClick={removeCount} size="small">-</Button>
             <p>{count}</p>
-            <Button onClick={addCount}  size="small">+</Button>
+            <Button onClick={addCount} disabled={count===stock}  size="small">+</Button>
+            <Button onClick={()=>onAdd(count)}>Agregar al carrito</Button>
         </div>
 
-            
-            <Button onClick={agregarProducto}>Agregar al carrito</Button>
-            
         </>
     )
 }
