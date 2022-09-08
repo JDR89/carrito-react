@@ -2,13 +2,20 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import "./ItemDetail.css"
 import { ItemCount } from "../ItemCount/ItemCount";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 
 const ItemDetail = ({ data }) => {
 
+  const [cantidad,setCantidad]=useState(0)
+
   const onAdd=(count)=>{
-    console.log(`Se agrego ${count} ${data.title} al carrito`)
+    setCantidad(count)
+    // console.log(`Se agrego ${count} ${data.title} al carrito`)
   }
+  console.log(cantidad)
 
   return (
     <div className="contenedor-item">
@@ -25,7 +32,7 @@ const ItemDetail = ({ data }) => {
 
       </CardContent>
 
-      <ItemCount inicial={1} stock={data.stock} title={data.title} onAdd={onAdd} />
+      {cantidad>0? <Link className="terminarCompra" to={"/cart"}><Button className="btnTerminarCompra">TERMINAR COMPRA</Button> </Link> :<ItemCount inicial={1} stock={data.stock} title={data.title} onAdd={onAdd}/>}
       
     </Card>
     </div>
