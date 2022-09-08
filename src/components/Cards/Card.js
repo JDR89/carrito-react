@@ -17,7 +17,7 @@ import { Button } from "@mui/material";
                 <div>
                  <img alt="imagen" src={`../imagenes/${image}`}/>
                  
-                <Button>
+                <Button variant="contained" size="small" style={{margin:"18px"}}>
                     <Link className="linkDetalle" to={`/producto/${id}`}>Detalle del producto</Link>
                 </Button>
                  </div>

@@ -32,7 +32,7 @@ const ItemDetail = ({ data }) => {
 
       </CardContent>
 
-      {cantidad>0? <Link className="terminarCompra" to={"/cart"}><Button className="btnTerminarCompra">TERMINAR COMPRA</Button> </Link> :<ItemCount inicial={1} stock={data.stock} title={data.title} onAdd={onAdd}/>}
+      {cantidad>0? <Link className="terminarCompra" to={"/cart"}><Button variant="contained"  className="btnTerminarCompra">TERMINAR COMPRA</Button> </Link> :<ItemCount inicial={1} stock={data.stock} title={data.title} onAdd={onAdd}/>}
       
     </Card>
     </div>

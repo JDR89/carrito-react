@@ -29,7 +29,7 @@ export const ItemCount = ({stock,onAdd}) =>{
             <Button onClick={removeCount} disabled={count===0} size="small">-</Button>
             <p>{count}</p>
             <Button onClick={addCount} disabled={count===stock}  size="small">+</Button>
-            <Button onClick={()=>onAdd(count)} disabled={count===0}>Agregar al carrito</Button>
+            <Button variant="contained" size="small" onClick={()=>onAdd(count)} disabled={count===0}>Agregar al carrito</Button>
         </div>
 
         </>
