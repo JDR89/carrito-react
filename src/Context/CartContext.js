@@ -7,10 +7,26 @@ export const CartProvider = ({children}) =>{
    const [listaProductosCarrito,setListaProductosCarrito] = useState([])
 
    const addProduct =(producto,count)=>{
-         const nuevoProducto={...producto,cantidad:count}
+        const newList = [...listaProductosCarrito]
 
-        const nuevaLista=[...listaProductosCarrito,nuevoProducto]
-        setListaProductosCarrito(nuevaLista)
+        if(isInCart(producto.id)){
+            const productIndex = listaProductosCarrito.findIndex(e=>e.id===producto.id)
+            newList[productIndex].cantidad = newList[productIndex].cantidad+count
+        }else{
+             const nuevoProducto={...producto,cantidad:count}
+             const nuevaLista=[...listaProductosCarrito,nuevoProducto]
+             setListaProductosCarrito(nuevaLista)
+        }
+
+
+
+
+
+
+        //  const nuevoProducto={...producto,cantidad:count}
+
+        // const nuevaLista=[...listaProductosCarrito,nuevoProducto]
+        // setListaProductosCarrito(nuevaLista)
    }
 
    const removeProduct = (idProduct)=>{
