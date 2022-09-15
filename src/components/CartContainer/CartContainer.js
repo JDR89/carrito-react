@@ -1,27 +1,35 @@
-import { useContext } from "react"
-import { CartContext } from "../../Context/CartContext"
-import { Button } from "@mui/material"
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
+const CartContainer = () => {
+  const { listaProductosCarrito, removeProduct, clearCart, isInCart } = useContext(CartContext);
+    
 
-    const CartContainer = () =>{
+  return (
+    <div>
+      {listaProductosCarrito.length > 0 ? (
+        <>
+          {listaProductosCarrito.map((e) => (
+            <p>
+              {e.title} Cantidad:{e.cantidad} Precio unidad:${e.price}  Precio total:${e.precioTotal}
+              <Button onClick={() => removeProduct(e.id)}>
+                Eliminar producto
+              </Button>
+            </p>
+          ))}
+          <Button onClick={clearCart}>Vaciar carrito</Button>
+          <Button onClick={() => isInCart(1)}>probar isInCart</Button>
+        </>
+      ) : (
+        <>
+        <p>No hay productos agregados al carrito</p>
+        <Button><Link to={"/"}>Ir a inicio</Link></Button>
+        </>
+      )}
+    </div>
+  );
+};
 
-        const {listaProductosCarrito,removeProduct,clearCart,isInCart}=useContext(CartContext)
-        
-
-    return(
-        <div>
-            {
-                listaProductosCarrito.map(e=><p>{e.title} {e.cantidad}
- 
-                <Button onClick={()=>removeProduct(e.id)}>Eliminar producto</Button></p>)
-                
-            }
-                <Button onClick={clearCart}>Vaciar carrito</Button>
-                <Button onClick={()=>isInCart(1)}>probar isInCart</Button>
-         </div>
-    )
-}
-
-export default CartContainer
-
-
+export default CartContainer;

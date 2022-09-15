@@ -5,6 +5,8 @@ export const CartContext = createContext()
 
 export const CartProvider = ({children}) =>{
    const [listaProductosCarrito,setListaProductosCarrito] = useState([])
+   
+
 
    const addProduct =(producto,count)=>{
         const newList = [...listaProductosCarrito]
@@ -12,21 +14,14 @@ export const CartProvider = ({children}) =>{
         if(isInCart(producto.id)){
             const productIndex = listaProductosCarrito.findIndex(e=>e.id===producto.id)
             newList[productIndex].cantidad = newList[productIndex].cantidad+count
+            newList[productIndex].precioTotal=newList[productIndex].cantidad*newList[productIndex].price
+            setListaProductosCarrito(newList)
         }else{
-             const nuevoProducto={...producto,cantidad:count}
+             const nuevoProducto={...producto,cantidad:count,precioTotal:count*producto.price}
              const nuevaLista=[...listaProductosCarrito,nuevoProducto]
              setListaProductosCarrito(nuevaLista)
         }
 
-
-
-
-
-
-        //  const nuevoProducto={...producto,cantidad:count}
-
-        // const nuevaLista=[...listaProductosCarrito,nuevoProducto]
-        // setListaProductosCarrito(nuevaLista)
    }
 
    const removeProduct = (idProduct)=>{
