@@ -39,7 +39,7 @@ const ItemDetail = ({ data }) => {
         cantidad > 0 ? (
           <Link className="terminarCompra" to={"/cart"}>
             <Button variant="contained" className="btnTerminarCompra">
-              TERMINAR COMPRA
+              IR AL CARRITO
             </Button>{" "}
           </Link>
         ) : (

@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const CartContainer = () => {
-  const { listaProductosCarrito, removeProduct, clearCart, isInCart } = useContext(CartContext);
+  const { listaProductosCarrito, removeProduct, clearCart} = useContext(CartContext);
     
 
   return (
@@ -20,7 +20,7 @@ const CartContainer = () => {
             </p>
           ))}
           <Button onClick={clearCart}>Vaciar carrito</Button>
-          <Button onClick={() => isInCart(1)}>probar isInCart</Button>
+          {/* <Button onClick={() => isInCart(1)}>probar isInCart</Button> */}
         </>
       ) : (
         <>

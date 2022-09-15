@@ -41,9 +41,17 @@ export const CartProvider = ({children}) =>{
     return exist
    }
 
+
+   const getTotalSeleccionados =()=>{
+        const totalSeleccionados = listaProductosCarrito.reduce((acc,data)=>acc + data.cantidad,0)
+        return totalSeleccionados
+   }
+
+
+
     return(
 
-        <CartContext.Provider value={{listaProductosCarrito,addProduct,removeProduct,clearCart,isInCart}}>
+        <CartContext.Provider value={{listaProductosCarrito,addProduct,removeProduct,clearCart,isInCart,getTotalSeleccionados}}>
             {children}
         </CartContext.Provider>
     )
