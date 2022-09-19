@@ -17,7 +17,7 @@ function App() {
             <Route path="/" element={<CardListContainer />} />
             <Route path="/productos" element={<CardListContainer />} />
             <Route
-              path="/productos/:tipoProducto"
+              path="/productos/:categoria"
               element={<CardListContainer />}
             />
             <Route

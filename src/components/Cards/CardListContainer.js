@@ -6,9 +6,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
 const CardListContainer = () => {
-  const { tipoProducto } = useParams();
+  const { categoria } = useParams();
 
   const [products, setProducts] = useState([]);
+
   const [load, SetLoad] = useState(true);
 
   useEffect(() => {
@@ -22,10 +23,10 @@ const CardListContainer = () => {
 
     getProducts()
       .then((resp) => {
-        if (!tipoProducto) {
+        if (!categoria) {
           setProducts(resp);
         } else {
-          const nuevaLista = resp.filter((e) => e.categoria === tipoProducto);
+          const nuevaLista = resp.filter((e) => e.categoria === categoria);
           setProducts(nuevaLista);
         }
         SetLoad(false);
@@ -33,7 +34,7 @@ const CardListContainer = () => {
       .catch((error) => {
         console.log("error " + error);
       });
-  }, [tipoProducto]);
+  }, [categoria]);
 
   return (
     <>
