@@ -15,7 +15,7 @@ import { Button } from "@mui/material";
         <Card className="card-item" sx={{ minWidth: 175 }}>
             <CardContent>
                 <div>
-                 <img alt="imagen" src={`../imagenes/${image}`}/>
+                 <img alt="imagen" src={image}/>
                  
                 <Button variant="contained" size="small" style={{margin:"18px"}}>
                     <Link className="linkDetalle" to={`/producto/${id}`}>Detalle del producto</Link>
