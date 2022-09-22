@@ -37,7 +37,6 @@ export const CartProvider = ({children}) =>{
 
    const isInCart=(id)=>{
     const exist=listaProductosCarrito.some(e=>e.id === id)
-    console.log(exist)
     return exist
    }
 
@@ -47,11 +46,16 @@ export const CartProvider = ({children}) =>{
         return totalSeleccionados
    }
 
+   const getTotalPago=()=>{
+     const totalPago=listaProductosCarrito.reduce((acc,item)=>acc+item.precioTotal,0)
+     return totalPago
+   }
+
 
 
     return(
 
-        <CartContext.Provider value={{listaProductosCarrito,addProduct,removeProduct,clearCart,isInCart,getTotalSeleccionados}}>
+        <CartContext.Provider value={{listaProductosCarrito,addProduct,removeProduct,clearCart,isInCart,getTotalSeleccionados,getTotalPago}}>
             {children}
         </CartContext.Provider>
     )

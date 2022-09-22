@@ -14,13 +14,7 @@ const ItemDetailContainer = () => {
 
   const [product, setProduct] = useState({});
 
-  // const getItem = () => {
-  //   return new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve(productos);
-  //     }, 2000);
-  //   });
-  // };
+ 
 
   useEffect(() => {
     const queryRef = doc(db,"items",idProducto)
@@ -32,12 +26,7 @@ const ItemDetailContainer = () => {
       }
       setProduct(newDoc)
     }).catch(error=>console.log(error))
-    // getItem().then((response) => {
-    //   idProducto
-    //     ? setProduct(response.find((e) => e.id === idProducto))
-    //     : setProduct(response);
-    //   setLoad(false);
-    // });
+   
   }, [idProducto]);
 
   return (
