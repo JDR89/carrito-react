@@ -1,0 +1,16 @@
+.card{
+    background-color: #3178b2;
+}
+.img-card{
+    max-width: 8rem;
+    max-height:8rem;
+    border-radius: 50%;
+    border-color: black;
+    border: solid 1px;
+    margin: 2em;
+
+}
+
+.letra-boton{
+    color: red;
+}

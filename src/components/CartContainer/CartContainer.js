@@ -1,3 +1,4 @@
+import "./CartContainer.css"
 import { useContext } from "react";
 import { useState } from "react";
 import { CartContext } from "../../Context/CartContext";
@@ -5,6 +6,9 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { db } from "../../data/Firebase";
 import {collection,addDoc} from "firebase/firestore"
+import CartCard from "./CartCards";
+import Grid from '@mui/material/Unstable_Grid2'
+
 
 const CartContainer = () => {
   const { listaProductosCarrito, removeProduct, clearCart, getTotalPago } =
@@ -19,8 +23,9 @@ const CartContainer = () => {
         name: e.target[0].value,
         phone: e.target[1].value,
         email: e.target[2].value,
-        date:new Date()
+        
       },
+      date:new Date(),
       items: listaProductosCarrito,
       total: getTotalPago(),
 
@@ -31,19 +36,20 @@ const CartContainer = () => {
     console.log(order)
   }
 
+
+
   return (
     <div>
       {listaProductosCarrito.length > 0 ? (
         <>
+          <Grid container className="contenedor" spacing={2}>
           {listaProductosCarrito.map((e) => (
-            <p>
-              {e.title} Cantidad:{e.cantidad} Precio unidad:${e.price} total:$
-              {e.precioTotal}
-              <Button onClick={() => removeProduct(e.id)}>
-                Eliminar producto
-              </Button>
-            </p>
+          
+          <Grid>
+          <CartCard key={e.id} title={e.title} price={e.price} cantidad={e.cantidad} image={e.image} total={e.precioTotal} remove={removeProduct} id={e.id}/>
+          </Grid>
           ))}
+          </Grid>
 
           <p>Precio total:${getTotalPago()}</p>
           <Button onClick={clearCart}>Vaciar carrito</Button>
