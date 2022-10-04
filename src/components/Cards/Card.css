@@ -1,5 +1,16 @@
+.card-item{
+    margin-top: 2rem;
+}
+
 .card-item img{
     max-width: 100%;
+    border:1px solid black ;
+    box-shadow: 7px;
+}
+
+.card-content{
+    background-color: #0276aa;
+    border: 1px solid black ;
     
 }
 

@@ -22,9 +22,9 @@ const ItemDetail = ({ data }) => {
  
 
   return (
-    <div className="contenedor-item">
+    <div className="contenedor-item" key={data.id}>
       <Card className="item-card" sx={{ minWidth: 175 }}>
-        <CardContent sx={{ minWidth: 175 }} className="item-detail">
+        <CardContent  key={data.id} sx={{ minWidth: 175 }} className="item-detail">
           <div>
             <p>{data.title}</p>
             <p>{data.price}</p>

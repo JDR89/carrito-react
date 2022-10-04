@@ -1,7 +1,40 @@
+.cart-container{
+    max-width: 100%; 
+   
+}
+
 .contenedor{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 3rem;
-    
+    max-width: 100%;
+}
+
+.form-caja{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid  black;
+    padding-top: 2rem;
+    margin: auto;
+    max-width: 20rem;
+    background-color: #0276aa;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-radius: 4px;
+
+}
+
+.form-input{
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-bottom: 0.1em;
+    width: 20em;
+    height: 2em;
+}
+
+.p-input{
+    display: flex;
+    align-items: flex-start;
 }

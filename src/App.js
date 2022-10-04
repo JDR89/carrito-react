@@ -5,6 +5,7 @@ import CardListContainer from "./components/Cards/CardListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import CartContainer from "./components/CartContainer/CartContainer";
 import { CartProvider } from "../src/Context/CartContext";
+import Footer from "./components/Footer/Footer.js";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/cart" element={<CartContainer />} />
             <Route path="*" element={<CardListContainer />} />
           </Routes>
+          <Footer/>
         </div>
       </BrowserRouter>
      </CartProvider>
