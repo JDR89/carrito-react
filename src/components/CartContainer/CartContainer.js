@@ -11,12 +11,40 @@ import Grid from '@mui/material/Unstable_Grid2'
 
 
 
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+
+
+
 
 const CartContainer = () => {
+
+  const estiloModal = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false)
+
+ 
+ 
+ 
+ 
+ 
   const { listaProductosCarrito, removeProduct, clearCart, getTotalPago } =
-    useContext(CartContext);
+  useContext(CartContext);
   const [idOrder,setIdOrder]=useState("")
-  console.log(idOrder)
+  
 
   const sendOrder= (e) =>{
     e.preventDefault()
@@ -35,10 +63,9 @@ const CartContainer = () => {
 
     const queryRef = collection(db,"orders")
     addDoc(queryRef,order).then(resp=>setIdOrder(resp.id))
-    console.log(order)
+
+    
   }
-
-
 
   return (
     <div className="cart-container">
@@ -53,18 +80,18 @@ const CartContainer = () => {
           ))}
           </Grid>
 
-          <p>Precio total:${getTotalPago()}</p>
+          <h3 variant="h2">Precio total:${getTotalPago()}</h3>
           <Button onClick={clearCart}>Vaciar carrito</Button>
 
           <Box className="form-caja" container>
           <form className="form" onSubmit={sendOrder}>
-            <p className="p-input">Nombre:</p>
+            <h4 className="p-input">Nombre:</h4>
             <input className="form-input" type="text" placeholder="Nombre"/><br/>
-            <p className="p-input">Telefono:</p>
+            <h4 className="p-input">Telefono:</h4>
             <input className="form-input" type="text" placeholder="Telefono"/><br/>
-            <p className="p-input">Email:</p>
+            <h4 className="p-input">Email:</h4>
             <input  className="form-input" type="email" placeholder="Email" /><br/>
-            <Button style={{marginTop:"1.5rem",marginBottom:"1.5rem"}} variant="outlined" color="error" className="submit" type="submit">Enviar pedido</Button>
+            <Button  onClick={handleOpen} style={{marginTop:"1.5rem",marginBottom:"1.5rem"}} variant="outlined" color="error" className="submit" type="submit">Enviar pedido</Button>
           </form>  
           </Box>
         </>
@@ -76,6 +103,27 @@ const CartContainer = () => {
           </Button>
         </>
       )}
+
+
+
+<Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={estiloModal}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Su pedido fue enviado con exito¡¡
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <p>Ante cualquier consulta su comprobante de pedido es:</p>
+            {idOrder}
+          </Typography>
+        </Box>
+      </Modal>
+
+
     </div>
   );
 };
