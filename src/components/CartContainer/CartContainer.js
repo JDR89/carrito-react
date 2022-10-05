@@ -8,14 +8,9 @@ import { db } from "../../data/Firebase";
 import {collection,addDoc} from "firebase/firestore"
 import CartCard from "./CartCards";
 import Grid from '@mui/material/Unstable_Grid2'
-
-
-
+import Input from '@mui/material/Input';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-
-
-
 
 
 const CartContainer = () => {
@@ -38,9 +33,6 @@ const CartContainer = () => {
 
  
  
- 
- 
- 
   const { listaProductosCarrito, removeProduct, clearCart, getTotalPago } =
   useContext(CartContext);
   const [idOrder,setIdOrder]=useState("")
@@ -58,11 +50,12 @@ const CartContainer = () => {
       date:new Date(),
       items: listaProductosCarrito,
       total: getTotalPago(),
-
+      
     };
 
     const queryRef = collection(db,"orders")
     addDoc(queryRef,order).then(resp=>setIdOrder(resp.id))
+    e.target.reset()
 
     
   }
@@ -86,11 +79,11 @@ const CartContainer = () => {
           <Box className="form-caja" container>
           <form className="form" onSubmit={sendOrder}>
             <h4 className="p-input">Nombre:</h4>
-            <input className="form-input" type="text" placeholder="Nombre"/><br/>
+            <Input variant="outlined" className="form-input" type="text" label="Nombre"/><br/>
             <h4 className="p-input">Telefono:</h4>
-            <input className="form-input" type="text" placeholder="Telefono"/><br/>
+            <Input variant="outlined" className="form-input" type="text" label="Telefono"/><br/>
             <h4 className="p-input">Email:</h4>
-            <input  className="form-input" type="email" placeholder="Email" /><br/>
+            <Input variant="outlined"  className="form-input" type="email" label="Email" /><br/>
             <Button  onClick={handleOpen} style={{marginTop:"1.5rem",marginBottom:"1.5rem"}} variant="outlined" color="error" className="submit" type="submit">Enviar pedido</Button>
           </form>  
           </Box>

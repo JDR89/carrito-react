@@ -1,6 +1,6 @@
 .cart-container{
     max-width: 100%; 
-   
+
 }
 
 .contenedor{
@@ -19,10 +19,11 @@
     padding-top: 2rem;
     margin: auto;
     max-width: 20rem;
-    background-color: #0276aa;
+    background-color: #0276aa ;
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
     border-radius: 4px;
+    opacity: 0.8;
 
 }
 
@@ -30,11 +31,12 @@
     border: 1px solid black;
     border-radius: 2px;
     margin-bottom: 0.1em;
-    width: 20em;
+    width: 15em;
     height: 2em;
 }
 
 .p-input{
     display: flex;
     align-items: flex-start;
+    margin-bottom: .4rem;
 }
